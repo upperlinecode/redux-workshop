@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import Provider from 'redux';
+import Card from '../Card';
 import { AppRoot } from './App.styles';
 
 const AppContainer = () => {
@@ -13,6 +14,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <AppRoot id="App">
+        <Card/>
       </AppRoot>
     </BrowserRouter>
   );

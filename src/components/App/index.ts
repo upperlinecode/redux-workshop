@@ -1,5 +1,3 @@
-import styled from "styled-components";
+import AppContainer from "./App";
 
-export const AppRoot = styled.div`
-  font-family: Helvetica, sans-serif;
-`;
+export default AppContainer;
