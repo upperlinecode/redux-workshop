@@ -1,10 +1,13 @@
 import React, { Component } from "react";
 import { CardRoot } from "./Card.styles";
+import gifData, { gifType } from "../../data/sample_data";
 
-const Card = () => {
-  return <CardRoot>
-      <h2>test</h2>
-  </CardRoot>;
+const Card = (props: { gif: gifType }) => {
+  return (
+    <CardRoot>
+      <img src={props.gif.images.downsized.url}/>
+    </CardRoot>
+  );
 };
 
 Card.id = "Card";
