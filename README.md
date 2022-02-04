@@ -56,7 +56,13 @@ This lab has been tested in VSCode. You're welcome to run it elsewhere if you li
 
 1. **Incorporate stored data into the app** - Now that you have the sample data in your redux store, we'll need to use the data from teh redux store. In the `App.tsx` file, use the `useSelector` hook to pull in the data from your redux store. Visually, nothing in your app should change. Check to make sure that you're using the redux store exclusively by removing all direct references to the sample data file from your `App.tsx` file.
 
-1. **Fetch Data from API and add to Redux Store** - The final step is to substitute the sample data for actual data from the Giphy API. Fetching data from an API requires us to manage asynchronous workflows with Redux for the first time in our work so far. To do this, you'll need to use `redux-thunk`. For more information about how Thunks work, we recommend checking out the [Redux documentation on async logic](https://redux.js.org/tutorials/essentials/part-5-async-logic)
+1. **Fetch Data from API and add to Redux Store** - The final step is to substitute the sample data for actual data from the Giphy API. Fetching data from an API requires us to manage asynchronous workflows with Redux for the first time in our work so far. To do this, you'll need to use `redux-thunk`. For more information about how Thunks work, we recommend checking out the [Redux documentation on async logic](https://redux.js.org/tutorials/essentials/part-5-async-logic). For this exercise, you'll need to use the API key you generated, and use the "trending" API endpoint.
+
+## Extensions
+Once you are done with the core exercises above, you are welcome to choose any of the below extensions:
+1. Improve the page with custom CSS
+2. The Giphy API has a number of different endpoints. We're using the "trending" endpoint above, but see if you can give the user the option to choose which endpoint you fetch from, and update the Redux store accordingly. 
+3. Add a search bar and allow the user to search for gifs around a theme
 
 ## Final Thoughts
 
