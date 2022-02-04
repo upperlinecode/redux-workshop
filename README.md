@@ -52,16 +52,12 @@ This lab has been tested in VSCode. You're welcome to run it elsewhere if you li
 
    ![redux store setup](redux_setup.png)
 
-    You'll need to work in the `actions.ts`, `reducer.ts`, and `types.ts` files to add the data from data_store.ts to the redux store. You'll know you were succesful when you can see the initial state in the `State` tab of the Redux dev tools in your browser. 
+    You'll need to work in the `actions.ts`, `reducer.ts`, and `types.ts` files to add the data from data_store.ts to the redux store. You'll know you were succesful when you can see the initial state in the `State` tab of the Redux dev tools in your browser.
 
-1. **Incorporate stored data into the app**
-1. **Fetch Data from API and add to Redux Store**
+1. **Incorporate stored data into the app** - Now that you have the sample data in your redux store, we'll need to use the data from teh redux store. In the `App.tsx` file, use the `useSelector` hook to pull in the data from your redux store. Visually, nothing in your app should change. Check to make sure that you're using the redux store exclusively by removing all direct references to the sample data file from your `App.tsx` file.
 
-If you learn best by reading documentation first, then be sure to read the linked resources before attempting the corresponding challenges:
-
--
+1. **Fetch Data from API and add to Redux Store** - The final step is to substitute the sample data for actual data from the Giphy API. Fetching data from an API requires us to manage asynchronous workflows with Redux for the first time in our work so far. To do this, you'll need to use `redux-thunk`. For more information about how Thunks work, we recommend checking out the [Redux documentation on async logic](https://redux.js.org/tutorials/essentials/part-5-async-logic)
 
 ## Final Thoughts
 
-- Takes time
-- Patterns will remain familiar - it's okay if you don't understand everythign right away, and are pattern-matching for a little while
+Redux is designed to manage large, complex apps, and is itself quite complex. It will take time to get used to using it. Redux uses quite a bit of boilerplate logic, which means that the general structure and patterns will remain familiar application-to-application. - it's okay if you don't understand everything right away, and are pattern-matching for a little while!
