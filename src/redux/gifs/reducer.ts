@@ -7,8 +7,6 @@ export default function gifsReducer(
   action: fetchGifsType
 ) {
   switch (action.type) {
-    case "FETCH_GIFS_REQUEST":
-      return { ...state, data: sample_data };
     default:
       return initialState;
   }
