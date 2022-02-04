@@ -17,7 +17,21 @@
 
 This lab is designed to give you an introduction to some of the most commonly used workflows in redux: fetching data from an API and storing it in a redux store, and then using data from the redux store in your application. You'll need to use these same workflows in your onboarding project.
 
-As you learn redux and global state management more broadly, you may be thinking: "couldn't I just store all of this information in my components' state?" The answer is mostly yes. You absolutely could. As applications grow in complexity, however, global state management tools like Redux help to keep your application organized, which in turn improves maintainability and scalability. As you build an application, if you find yourself doing a lot of prop drilling, losing track of what information is stored in various components' states, or otherwise having trouble managing the data flow of your application, a state management tool like Redux might be a tool to consider.
+As you learn redux and global state management more broadly, you may be thinking: "couldn't I just store all of this information in my components' state?" The answer is mostly yes. You absolutely could. As applications grow in complexity, however, global state management tools like Redux help to keep your application organized, which in turn improves maintainability and scalability. 
+
+Redux is one such global state management tool. It is a library that helps manage the state of your application as it grows in complexity. It aims to manage updates to your application by adhering to 3 principles:
+- having one single source of truth (the redux “store”)
+- making state read-only
+- only allowing state to be modified via pure functions (redux “reducers”).
+
+Its aim is to make state mutations predictable to allow developers the ability to reason more clearly about the various interactions within an application.
+
+# Key Vocab
+
+- `store` - global readonly state. Due to its readonly state, reducers are used to mutate the state.
+- `reducers` - pure functions whose responsibility is to process actions and manipulate the store's state.
+- `actions` - following the Flux Standard Action (FSA) pattern, actions are objects that communicate to redux on what is happening. Reducers will interpret these action objects and decide what should be done.
+- `selectors` - getter functions to retrieve specific data from redux. Can also be used to increase performance of constantly getting information from the store by memoization.s
 
 ## Directions
 
@@ -34,7 +48,12 @@ This lab has been tested in VSCode. You're welcome to run it elsewhere if you li
 
 ## Guidance:
 
-1. **Add Sample Data to Redux Store** - to start this lab, we'll be working with the sample data file. The goal of this step is to take the data stored in the `src/data/sample_data.ts` file and store it in our redux store
+1. **Add Sample Data to Redux Store** - to start this lab, we'll be working with the sample data file. The goal of this step is to take the data stored in the `src/data/sample_data.ts` file and store it in our redux store. Notice that in `App.tsx`, we have already added in the initial Redux store instantiation with the `configureStore` function and then wrapped our `App` component in the `Provider` component from `react-redux`
+
+   ![redux store setup](redux_setup.png)
+
+    You'll need to work in the `actions.ts`, `reducer.ts`, and `types.ts` files to add the data from data_store.ts to the redux store. You'll know you were succesful when you can see the initial state in the `State` tab of the Redux dev tools in your browser. 
+
 1. **Incorporate stored data into the app**
 1. **Fetch Data from API and add to Redux Store**
 
