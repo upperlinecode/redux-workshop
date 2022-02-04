@@ -22,7 +22,7 @@ const App = () => {
     <BrowserRouter>
       <AppRoot id="App">
         {gifData.map((gif) => {
-          return <Card gif={gif} />;
+          return <Card key={gif.id} gif={gif} />;
         })}
       </AppRoot>
     </BrowserRouter>
