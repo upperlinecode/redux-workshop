@@ -58,11 +58,13 @@ This lab has been tested in VSCode. You're welcome to run it elsewhere if you li
 
 1. **Fetch Data from API and add to Redux Store** - The final step is to substitute the sample data for actual data from the Giphy API. Fetching data from an API requires us to manage asynchronous workflows with Redux for the first time in our work so far. To do this, you'll need to use `redux-thunk`. For more information about how Thunks work, we recommend checking out the [Redux documentation on async logic](https://redux.js.org/tutorials/essentials/part-5-async-logic). For this exercise, you'll need to use the API key you generated, and use the "trending" API endpoint.
 
+1. **Incorporate Redux Toolkit** - Now that you've seen how each piece of redux functions, refactor to utilize Redux Toolkit, specifically the [configureStore](https://redux-toolkit.js.org/api/configureStore) and [createSlice](https://redux-toolkit.js.org/api/createSlice) features. If you have time, you can also explore other features like [createAPI](https://redux-toolkit.js.org/rtk-query/api/createApi), [createSelector](https://redux-toolkit.js.org/api/createSelector), and [createEntityAdapter](https://redux-toolkit.js.org/api/createEntityAdapter) as useful patterns.
+
 ## Extensions
 Once you are done with the core exercises above, you are welcome to choose any of the below extensions:
-1. Improve the page with custom CSS
+1. Improve the page with custom CSS.
 2. The Giphy API has a number of different endpoints. We're using the "trending" endpoint above, but see if you can give the user the option to choose which endpoint you fetch from, and update the Redux store accordingly. 
-3. Add a search bar and allow the user to search for gifs around a theme
+3. Add a search bar and allow the user to search for gifs around a theme. 
 
 ## Final Thoughts
 
