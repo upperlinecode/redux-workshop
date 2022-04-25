@@ -35,7 +35,7 @@ interface GiphyImages {
   };
 }
 
-interface GiphyData {
+export interface GiphyData {
   type: string;
   id: string;
   url: string;
@@ -66,5 +66,13 @@ interface GiphyResp {
 export const getGifs = async (limit = 25): Promise<GiphyResp> => {
   return await fetch(
     `${API_URL}/trending?limit=${limit}&rating=g&api_key=${API_KEY}`
-  ).then((resp) => resp.json());
+  )
+    .then((resp) => resp.json())
+    .then((resp) => {
+      if (resp.message) {
+        throw new Error(resp.message);
+      } else {
+        return resp;
+      }
+    });
 };

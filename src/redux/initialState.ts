@@ -1,8 +1,13 @@
+import { GiphyData } from "../data/utils";
+import { gifData } from "../data/sample_data";
+
 const initialState = {
   gifs: {
-    error: null,
+    activeCardId: "",
+    error: null as null | string,
     isLoading: false,
-    data: [],
+    data: [] as GiphyData[],
+    // data: gifData as GiphyData[],
   },
 };
 

@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { CardRoot } from "./Card.styles";
 import gifData, { gifType } from "../../data/sample_data";
+import { GiphyData } from "../../data/utils";
 
 const Card = (props: {
   isActive: boolean;
-  gif: gifType;
+  gif: GiphyData;
   onClick: () => void;
 }) => {
   return (
