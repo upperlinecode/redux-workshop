@@ -59,7 +59,7 @@ This lab has been tested in VSCode. You're welcome to run it elsewhere if you li
 
    ![redux store setup](redux_setup.png)
 
-    You'll need to work in the `actions.ts`, `reducer.ts`, and `types.ts` files to add the data from `data_store.ts` to the redux store. You'll know you were successful when you can see the initial state in the `State` tab of the Redux dev tools in your browser.
+    You'll need to work in the `actions.ts`, `reducer.ts`, and `types.ts` files to add the data from `sample_data.ts` to the redux store. You'll know you were successful when you can see the initial state in the `State` tab of the Redux dev tools in your browser.
 
 3. **Incorporate stored data into the app** - Now that you have the sample data in your redux store, we'll need to use the data from the redux store. In the `App.tsx` file, use the `useSelector` hook to pull in the data from your redux store. Visually, nothing in your app should change. Check to make sure that you're using the redux store exclusively by removing all direct references to the sample data file from your `App.tsx` file.
 
