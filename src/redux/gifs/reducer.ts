@@ -8,6 +8,6 @@ export default function gifsReducer(
 ) {
   switch (action.type) {
     default:
-      return initialState;
+      return state;
   }
 }
