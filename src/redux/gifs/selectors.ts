@@ -1,6 +1,8 @@
-import { GifState } from "./types";
+import { RootState } from "../../configureStore";
 
-export const getActiveCardId = (state: { gifs: GifState }) =>
-  state.gifs.activeCardId;
+export const getGifsState = (state: RootState) => state.gifs;
 
-export const getGifs = (state: { gifs: GifState }) => state.gifs.data;
+export const getActiveCardId = (state: RootState) =>
+  getGifsState(state).activeCardId;
+
+export const getGifs = (state: RootState) => getGifsState(state).data;

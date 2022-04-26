@@ -1,6 +1,6 @@
-import reducer from "./reducer";
+import slice from "./slice";
 
 export * from "./actions";
 export * from "./types";
 
-export default reducer;
+export default slice;

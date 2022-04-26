@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import Card from "../Card";
 import { AppRoot } from "./App.styles";
 import { getActiveCardId, getGifs } from "../../redux/gifs/selectors";
-import { fetchGifsThunk, setActiveCardId } from "../../redux/gifs";
+import slice, { fetchGifsThunk } from "../../redux/gifs";
+import { useAppDispatch, useAppSelector } from "../../configureStore";
 
 const App = () => {
-  const dispatch = useDispatch();
-  const activeCard = useSelector(getActiveCardId);
-  const gifData = useSelector(getGifs);
-  const setActiveCard = (cardId: string) => dispatch(setActiveCardId(cardId));
+  const dispatch = useAppDispatch();
+  const activeCard = useAppSelector(getActiveCardId);
+  const gifData = useAppSelector(getGifs);
+  const setActiveCard = (cardId: string) =>
+    dispatch(slice.actions.setActiveCardId({ cardId }));
 
   useEffect(() => {
     dispatch(fetchGifsThunk());

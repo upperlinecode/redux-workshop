@@ -3,10 +3,7 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import App from "./components/App";
-import configureStore from "./configureStore";
-import initialState from "./redux/initialState";
-
-const store = configureStore(initialState);
+import store from "./configureStore";
 
 ReactDOM.render(
   <Provider store={store}>

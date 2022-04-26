@@ -1,23 +1,15 @@
-import { applyMiddleware, compose, createStore, StoreEnhancer } from "redux";
-import thunkMiddleware from "redux-thunk";
+import { configureStore } from "@reduxjs/toolkit";
+import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import rootReducer from "./redux/rootReducer";
-import type { AppState } from "./redux/initialState";
 
-const configureStore = (state?: Partial<AppState>) => {
-  const composeEnhancers =
-    typeof window === "object" &&
-    (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
-      ? (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({})
-      : compose;
+const store = configureStore({
+  reducer: rootReducer,
+  devTools: true,
+});
 
-  const enhancer = composeEnhancers(
-    applyMiddleware(thunkMiddleware)
-    // other store enhancers if any
-  );
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
+export const useAppDispatch = () => useDispatch<AppDispatch>();
+export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 
-  const store = createStore(rootReducer, state, enhancer);
-
-  return store;
-};
-
-export default configureStore;
+export default store;
