@@ -76,3 +76,18 @@ Once you are done with the core exercises above, you are welcome to choose any o
 ## Final Thoughts
 
 Redux is designed to manage large, complex apps, and is itself quite complex. It will take time to get used to using it. Redux uses quite a bit of boilerplate logic, which means that the general structure and patterns will remain familiar application-to-application. - it's okay if you don't understand everything right away, and are pattern-matching for a little while!
+
+## Redux Toolkit Steps
+
+**Documentation:** https://redux-toolkit.js.org/introduction/getting-started
+
+1. Install Redux Toolkit - `npm install @reduxjs/toolkit`
+2. Update `./src/configureStore.ts` to leverage the `configureStore` utility function from `@reduxjs/toolkit`. Change the export of this file from being the configureStore function to the actual store and update the `index.tsx` file.
+3. Create a `slice` utilizing the `createSlice` utility function from `@reduxjs/toolkit` having the name key from our reducer map (`gifs`).
+4. Update our newly created `slice`, to add in the reducers (which in turn will add in the action creators) from our old `reducer` and `action creators`.
+5. Add in extraReducers to account for the thunk action creator.
+6. Update our components to leverage these new action creators from the slice.
+7. Update our TypeScript root app interface to `RootState` leveraging the store that is created in configureStore.ts.
+8. Update our selectors with the new `RootState`.
+9. Create a `useAppDispatch` and a `useAppSelector` to be "smarter" with TypeScript so that it knows what actions our store accepts and what selectors are valid based on our store.
+10. Replace existing `useDispatch` and `useSelector` with our `useAppDispatch` and `useAppSelector`.
